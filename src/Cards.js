@@ -1,21 +1,25 @@
 import React from 'react';
-import { Card, Button } from 'semantic-ui-react';
-// import Card from "./Card"
+import { Card } from 'semantic-ui-react';
+import Card from "./Card"
 
-const Cards = ({ cards }) => (
-  <Card.Group>
-    <Card>
-      {cards.map(card => (
-        <Card.Content key={card.id}>
-          <Card.Header>{card.question}</Card.Header>
-          <Card.Description>{card.answer}</Card.Description>
-          <Card.Description>
-            <Button color="blue" size="small">Delete</Button>
-          </Card.Description>
-        </Card.Content>
-      ))}
-    </Card>
-  </Card.Group>
-);
+const Cards = props => (
+  <Card>
+        {props.cards.map(card => (
+          <Card
+           key={card}
+            // foo={props.deleteCallback}
+            // key={`contact-${contact.id}`}
+            // name={contact.name}
+            // phone={contact.phone}
+            // id={contact.id}
+            {...card}
+          />
+        ))}
+  </Card>
+)
 
-export default Cards;
+  
+    
+
+
+export default Cards
